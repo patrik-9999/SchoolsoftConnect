@@ -11,6 +11,8 @@ namespace Test
         [InlineData("980101-0101", "19980101-0101")]
         [InlineData("0101010101", "20010101-0101")]
         [InlineData("7304011256", "19730401-1256")]
+        [InlineData(" 7304011256", "19730401-1256")]
+        [InlineData(" 7304011256 ", "19730401-1256")]
         [InlineData("", "")]
         [InlineData("Inte ett personnummer", "Inte ett personnummer")]
         public void TestNormalize13(string input, string expected)
@@ -27,6 +29,8 @@ namespace Test
         [InlineData("196501010101", "196501010101")]
         [InlineData("010101-0101", "200101010101")]
         [InlineData("980101-0101", "199801010101")]
+        [InlineData(" 980101-0101", "199801010101")]
+        [InlineData("980101-0101  ", "199801010101")]
         [InlineData("0101010101", "200101010101")]
         [InlineData("7304011256", "197304011256")]
         [InlineData("", "")]

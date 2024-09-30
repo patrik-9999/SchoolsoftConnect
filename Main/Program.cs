@@ -19,9 +19,6 @@ public class Program
             .Build();
         var settings = config.GetRequiredSection("Settings").Get<Settings>() ?? throw new Exception("settings is null");
         var outputDirectory = Path.GetFullPath(settings.OutputDirectory);
-        //string userId = File.ReadAllText(Path.Combine(settings.CredentialsDir, "azure_sql_userid.txt"));
-        //string password = File.ReadAllText(Path.Combine(settings.CredentialsDir, "azure_sql_password.txt"));
-        //string sqlConnectionString = String.Format(settings.SqlConnectionString, userId, password);
 
         Log.Logger = new LoggerConfiguration()
             .ReadFrom.Configuration(config)
